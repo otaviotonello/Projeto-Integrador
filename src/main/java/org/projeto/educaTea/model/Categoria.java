@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Table (name = "tb_categoria")
 public class Categoria {
 
-	@Id
+	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	

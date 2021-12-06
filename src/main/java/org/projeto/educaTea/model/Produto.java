@@ -25,7 +25,7 @@ public class Produto {
 	
 	@NotBlank
 	@Size(min = 5, max = 100)
-	private String nome_produto;
+	private String nomeProduto;
 	
 	@NotBlank
 	@Size(min = 10, max = 1500)
@@ -48,12 +48,12 @@ public class Produto {
 		this.id = id;
 	}
 
-	public String getNome_produto() {
-		return nome_produto;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNome_produto(String nome_produto) {
-		this.nome_produto = nome_produto;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public String getDescricao_produto() {

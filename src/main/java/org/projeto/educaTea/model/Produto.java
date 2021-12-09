@@ -1,7 +1,4 @@
 package org.projeto.educaTea.model;
-
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -41,7 +38,6 @@ public class Produto {
 	@JoinColumn(name = "fk_categoria")
 	@JsonIgnoreProperties ("produto")
 	private Categoria categoria;
-	
 	
 	public long getId() {
 		return id;

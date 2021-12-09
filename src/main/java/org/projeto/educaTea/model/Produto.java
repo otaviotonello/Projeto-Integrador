@@ -1,13 +1,15 @@
 package org.projeto.educaTea.model;
 
-import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -29,15 +31,16 @@ public class Produto {
 	
 	@NotBlank
 	@Size(min = 10, max = 1500)
-	private String descricao_produto;
+	private String descricaoProduto;
 	
 	@NotBlank
 	@Size(min = 5, max = 100)
-	private String nome_instrutor;
+	private String nomeInstrutor;
 	
-	@OneToMany (mappedBy = "produto", cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@JoinColumn(name = "fk_categoria")
 	@JsonIgnoreProperties ("produto")
-	private List <Categoria> categoria;
+	private Categoria categoria;
 	
 	
 	public long getId() {
@@ -56,28 +59,27 @@ public class Produto {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public String getDescricao_produto() {
-		return descricao_produto;
+	public String getDescricaoProduto() {
+		return descricaoProduto;
 	}
 
-	public void setDescricao_produto(String descricao_produto) {
-		this.descricao_produto = descricao_produto;
+	public void setDescricaoProduto(String descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
 	}
 
-	public String getNome_instrutor() {
-		return nome_instrutor;
+	public String getNomeInstrutor() {
+		return nomeInstrutor;
 	}
 
-	public void setNome_instrutor(String nome_instrutor) {
-		this.nome_instrutor = nome_instrutor;
+	public void setNomeInstrutor(String nomeInstrutor) {
+		this.nomeInstrutor = nomeInstrutor;
 	}
 
-	public List<Categoria> getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(List<Categoria> categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
 }

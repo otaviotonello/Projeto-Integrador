@@ -19,6 +19,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @param GetAll
+ * @param GetById
+ * @param GetByNome
+ * @param Post
+ * @param Put
+ * @param Delete
+ * @return RequestMapping
+ * @author Pedro Borelli
+ * @version 1.0
+ * @see CategoriaController
+ * 
+ */
+
 @RestController
 @RequestMapping("/categorias")
 @CrossOrigin("*")

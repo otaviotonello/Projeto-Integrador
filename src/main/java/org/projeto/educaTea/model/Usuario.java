@@ -8,12 +8,32 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-
+/**
+ * <p>
+ * - id: representa a coluna de id do categoria. Essa coluna é gerada automaticamente e possui AUTO_INCREMENT.
+ * </p>
+ * 
+ * <p>
+ * - nomeUsuario: representa o nome da usuario;
+ * </p>
+ * 
+ * <p>
+ * - email: representa o email do usuario;
+ * </p>
+ * 
+ * <p>
+ * - senha: representa a senha do usuario;
+ * </p>
+ *
+ * @author Joel Moraes
+ * @version 1.0
+ * @see Produto
+ * @see Categoria
+ */
 @Entity
 @Table (name = "tb_usuario")
 public class Usuario {
 	
-
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -26,6 +46,7 @@ public class Usuario {
 	@Size(min = 10, max = 1500)
 	private String email;
 	
+
 	@NotBlank
 	@Size (min = 5, max = 255)
 	private String senha;

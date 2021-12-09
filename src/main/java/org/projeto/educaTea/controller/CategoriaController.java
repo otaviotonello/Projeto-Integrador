@@ -19,43 +19,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @param GetAll
- * @param GetById
- * @param GetByNome
- * @param Post
- * @param Put
- * @param Delete
- * @return RequestMapping
- * @author Pedro Borelli
- * @version 1.0
- * @see CategoriaController
- * 
- */
-
 @RestController
 @RequestMapping("/categorias")
 @CrossOrigin("*")
-
 public class CategoriaController {
 	 
 	@Autowired
 	private CategoriaRepository repository;
 	
 	@GetMapping
-	public ResponseEntity<List<Categoria>> GetAll() {
+	public ResponseEntity<List<Categoria>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> GetById(@PathVariable long id) {
+	public ResponseEntity<Categoria> getById(@PathVariable long id) {
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Categoria>> GetByNome(@PathVariable String nome){
+	public ResponseEntity<List<Categoria>> getByNome(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
 	

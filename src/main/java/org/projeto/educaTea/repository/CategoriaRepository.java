@@ -7,14 +7,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @param findByNomeContainingIgnoreCase
- * @return String nome
+ * @param String
+ * @return List<Categoria>
  * @author Pedro Borelli
  * @version 1.0
- * @see CategoriaRepository
- * 
+ * @see Categoria
+ * @see ProdutoRepository 
+ * @see UsuarioRepository
  */
-
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria,Long> {
 	public List<Categoria> findAllByNomeContainingIgnoreCase(String nome);

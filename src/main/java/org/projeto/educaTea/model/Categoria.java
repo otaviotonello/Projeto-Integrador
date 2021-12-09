@@ -32,14 +32,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * - ArrayList (produto): representa o relacionamento e recursividade com a tabela de produtos;
  * </p>
  * 
- * @param Model 
- * @return Atributos e Relacionamento
  * @author Otavio Tonello
  * @version 1.0
- * @see Categoria
- * 
+ * @see Produto
+ * @see Usuario
  */
-
 @Entity
 @Table (name = "tb_categoria")
 public class Categoria {

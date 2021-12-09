@@ -14,6 +14,29 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * <p>
+ * - id: representa a coluna de id do categoria. Essa coluna é gerada automaticamente e possui AUTO_INCREMENT.
+ * </p>
+ * 
+ * <p>
+ * - nomeProduto: representa o nome da produto;
+ * </p>
+ * 
+ * <p>
+ * - descricao: representa a descrição da produto;
+ * </p>
+ * 
+ * * <p>
+ * - nomeInstrutor: o atributo recebe o nome do instrutor;
+ * </p>
+ *
+ * 
+ * @author Bianca Rocha 
+ * @version 1.0
+ * @see Categoria 
+ * @see Usuario 
+ */
 @Entity
 @Table (name = "tb_produto")
 public class Produto {

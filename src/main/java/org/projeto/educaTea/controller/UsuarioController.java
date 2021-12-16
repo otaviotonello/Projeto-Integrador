@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.projeto.educaTea.model.UserLogin;
 import org.projeto.educaTea.model.Usuario;
+import org.projeto.educaTea.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

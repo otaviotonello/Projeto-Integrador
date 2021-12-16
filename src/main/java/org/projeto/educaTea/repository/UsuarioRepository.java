@@ -1,12 +1,15 @@
 package org.projeto.educaTea.repository;
 
-import java.util.List;
+
+import java.util.Optional;
 
 import org.projeto.educaTea.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * @param String
+
  * @return List<Usuario>
  * @author Bruna Bergami
  * @version 1.0
@@ -14,8 +17,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @see ProdutoRepository 
  * @see Usuario
  */
+
+@Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-	
-	public List<Usuario> findAllByNomeUsuarioContainingIgnoreCase(String nomeUsuario);
+		public Optional <Usuario> findByNomeUsuario (String nomeUsuario);
 
 }

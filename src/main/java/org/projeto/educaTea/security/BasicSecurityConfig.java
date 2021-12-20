@@ -19,6 +19,8 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
+		auth.inMemoryAuthentication().withUser("educaTea").password(passwordEncoder().encode("12345"))
+        .authorities("ROLE_ADMIN");
 	}
 
 	@Bean

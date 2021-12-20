@@ -1,20 +1,12 @@
 package org.projeto.educaTea.model;
 
 public class UserLogin {
-	
-	private Long id; 
+	 
 	private String nomeUsuario;
 	private String email;
 	private String senha;
 	private String token;
 	
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}

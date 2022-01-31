@@ -44,12 +44,11 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
-	@Size(min = 5, max = 100)
+	@Size(min = 3,  max = 100)
 	private String nomeUsuario;
 	
 	@NotBlank
-	@Size(min = 10, max = 1500)
+	@Size(min = 5, max = 1500)
 	private String email;
 	
 

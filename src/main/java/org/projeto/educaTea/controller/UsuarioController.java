@@ -37,7 +37,7 @@ public class UsuarioController {
 	private UsuarioRepository repository;
 	
 	@GetMapping("/all") 
-	public List<Usuario> findall() {
+	public List<Usuario> findall()  {
 		return repository.findAll();
 	}
 

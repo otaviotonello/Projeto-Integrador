@@ -49,9 +49,7 @@ public class Categoria {
 	@Size(min = 5, max = 100)
 	private String nome;
 	
-	@NotBlank
-	@Size(min = 10, max = 1500)
-	private String descricao;
+
 	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
@@ -71,14 +69,6 @@ public class Categoria {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public List<Produto> getProduto() {
